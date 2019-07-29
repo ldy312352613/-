@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>please enter your title</title>
+		<meta charset="utf-8">
+		<meta name="Author" content="潭州学院-阿飞老师">
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			img{
+				display:block;
+				margin-bottom:20px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img data-original="img/1.jpg" alt="" width="500" height="320" />
+		<img data-original="img/2.jpg" alt="" width="500" height="320" />
+		<img data-original="img/3.jpg" alt="" width="500" height="320" />
+		<img data-original="img/4.jpg" alt="" width="500" height="320" />
+		<img data-original="img/5.jpg" alt="" width="500" height="320" />
+		<img data-original="img/6.jpg" alt="" width="500" height="320" />
+		<img data-original="img/7.jpg" alt="" width="500" height="320" />
+		<img data-original="img/8.jpg" alt="" width="500" height="320" />
+		<img data-original="img/9.jpg" alt="" width="500" height="320" />
+		<img data-original="img/10.jpg" alt="" width="500" height="320" />
+		<img data-original="img/11.jpg" alt="" width="500" height="320" />
+		<img data-original="img/12.jpg" alt="" width="500" height="320" />
+		<img data-original="img/13.jpg" alt="" width="500" height="320" />
+		<img data-original="img/14.jpg" alt="" width="500" height="320" />
+
+		<script type="text/javascript" src='js/jquery-1.12.1.min.js'></script>
+		<script type="text/javascript" src='js/jquery.lazyload.min.js'></script>
+		<script type="text/javascript">
+
+			/*
+				使用懒加载注意事项：
+					需要进行延迟加载的图片：
+						src地址写在 自定义属性data-original里面，
+						图片要规定width属性 和 height属性
+					lazyload函数：
+						参数  effect : 图片展示出来时的效果， fadeIn 淡入  slideDown  show
+						参数  placeholder ： 未加载时，用来代替的图片路径
+						其他参数可以自己了解
+			*/
+			
+			$('img').lazyload({
+				effect : 'fadeIn',
+				placeholder : 'img/loading.jpg'
+			});
+
+
+
+		</script>
+	</body>
+</html>

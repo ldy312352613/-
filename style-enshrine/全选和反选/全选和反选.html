@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="�ؼ���">
+    <meta name="description" content="����">
+    <meta name="author" content="̶�ݽ���-������ʦ">
+    <style>
+        body {
+            font-family: "Microsoft YaHei", serif;
+        }
+
+        body,
+        dl,
+        dd,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        ol,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        #wrap {
+            width: 300px;
+            padding-top: 20px;
+            margin: 50px auto;
+            border: 1px solid #bbb;
+            border-radius: 15px;
+            user-select: none;
+        }
+
+        #wrap ul.list li {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            background: url("image/ckbg1.jpg") no-repeat 20px center;
+            text-indent: 70px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        #wrap ul.list li.click {
+            background-image: url("image/ckbg2.jpg");
+            text-indent: 50px;
+        }
+
+        #wrap .btn {
+            overflow: hidden;
+            width: 100%;
+            height: 50px;
+        }
+
+        #wrap .btn p {
+            float: left;
+            line-height: 50px;
+            margin-left: 50px;
+            background: url("image/ckbg1.jpg") no-repeat 0 center;
+            text-indent: 23px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #wrap .btn p.click {
+            background-image: url("image/ckbg2.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul class="list">
+            <li class="">朱雀</li>
+            <li class="">心艾</li>
+            <li class="">发发</li>
+            <li class="">七七</li>
+            <li class="">岚岚</li>
+            <li class="">艾米</li>
+            <li class="">丫丫</li>
+            <li class="">风屿</li>
+        </ul>
+        <div class="btn">
+           <p class="all">全选</p>
+            <p class="fan" style="background-image: none">反选</p>
+        </div>
+    </div>
+
+    <script>
+		
+		
+        (function(){
+
+            var colorArr = ["#222","#555","#888","#bbb"];
+            var aLi = document.querySelectorAll("#wrap .list li");
+            var oAll = document.querySelector("#wrap .btn .all");
+            var oFan = document.querySelector("#wrap .btn .fan");
+            var len = aLi.length;
+			//封装
+			function feng(){
+				//当每一个li全选的以后 全选的的按钮也打上添加click
+					var aclick = document.querySelectorAll("#wrap .list li.click")
+					//console.log(aclick)
+					if(aclick.length===len){
+						oAll.classList.add("click")
+					}else{
+						oAll.classList.remove("click")
+					}
+				}
+            for(var i = 0;i<len;i++){
+				//先设置颜色
+				aLi[i].style.backgroundColor = colorArr[i%colorArr.length]
+				aLi[i].onclick = function(){
+					//console.log(111)
+					this.classList.toggle("click")
+					feng()
+				}
+			}
+			//当点击全选的时候
+			oAll.onclick = function(){
+				var op = this.classList.toggle("click")?"add":"remove";
+				console.log(op)
+				for(var i = 0;i<len;i++){
+					aLi[i].classList[op]("click")
+				}
+			}
+			//当反选的时候
+			oFan.onclick = function(){
+				for(var i = 0;i<len;i++){
+					aLi[i].classList.toggle("click")
+				}
+				feng()
+			}
+		})()
+    </script>
+</body>
+
+</html>

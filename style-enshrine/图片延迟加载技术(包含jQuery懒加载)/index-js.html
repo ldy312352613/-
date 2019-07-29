@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>please enter your title</title>
+		<meta charset="utf-8">
+		<meta name="Author" content="潭州学院-阿飞老师">
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			img{
+				display:block;
+				margin-bottom:20px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="img/1.jpg" alt="" width="500" height="auto" />
+		<img src="img/2.jpg" alt="" width="500" height="auto" />
+		<img src="img/3.jpg" alt="" width="500" height="auto" />
+		<img src="img/4.jpg" alt="" width="500" height="auto" />
+		<img src="img/5.jpg" alt="" width="500" height="auto" />
+		<img src="img/6.jpg" alt="" width="500" height="auto" />
+		<img src="img/7.jpg" alt="" width="500" height="auto" />
+		<img src="img/8.jpg" alt="" width="500" height="auto" />
+		<img src="img/9.jpg" alt="" width="500" height="auto" />
+		<img src="img/10.jpg" alt="" width="500" height="auto" />
+		<img src="img/11.jpg" alt="" width="500" height="auto" />
+		<img src="img/12.jpg" alt="" width="500" height="auto" />
+		<img src="img/13.jpg" alt="" width="500" height="auto" />
+		<img src="img/14.jpg" alt="" width="500" height="auto" />
+
+		<script type="text/javascript">
+			var oImg = document.getElementsByTagName('img');
+			var length = oImg.length;
+
+			for ( var i=0;i<length;i++ )
+			{
+				oImg[i].dataSrc = oImg[i].src;
+				oImg[i].src = 'img/loading.jpg';
+			}
+			window.onload = function(){
+
+				var arr = [];
+
+				for ( var i=0;i<length;i++ )
+				{
+					arr[i] = oImg[i];
+				}
+				imgShow();
+				window.onscroll = imgShow;
+				
+				function imgShow(){
+					
+					for ( var i=arr.length-1;i>=0;i-- )
+					{
+						var top = offsetTop( arr[i] );
+						var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+						if ( top < ( scrollTop + winSize().height ) )
+						{
+							arr[i].src = arr[i].dataSrc;
+							arr.slice( i,1 );
+						}
+					}
+
+				};
+
+				function offsetTop(obj){
+					
+					var top = 0;
+
+					while ( obj != document.body )
+					{
+						top += obj.offsetTop;
+						obj = obj.parentNode;
+					};
+
+					return top;
+
+				};
+
+				function winSize() { 
+					var e = window,a = 'inner';
+					if (!('innerWidth' in window )){ 
+						a = 'client'; 
+						e = document.documentElement || document.body; 
+					};
+					return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }; 
+				};
+
+			};
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" />
+  <title>旋转的正方体</title>
+  <style type="text/css">
+    @-webkit-keyframes rotationX {
+        from {
+          -webkit-transform: rotateX(0);
+        }
+        to {
+          -webkit-transform: rotateX(360deg);
+        }
+    }
+    @-webkit-keyframes rotationY {
+        from {
+          -webkit-transform: rotateY(0);
+        }
+        to {
+          -webkit-transform: rotateY(360deg);
+        }
+    }
+     @-webkit-keyframes rotationZ {
+        from {
+          -webkit-transform: rotateZ(0);
+        }
+        to {
+          -webkit-transform: rotateZ(360deg);
+        }
+    }
+    @-moz-keyframes rotationX {
+        from {
+          -moz-transform: rotateX(0);
+        }
+        to {
+          -moz-transform: rotateX(360deg);
+        }
+    }
+    @-moz-keyframes rotationY {
+        from {
+          -moz-transform: rotateY(0);
+        }
+        to {
+          -moz-transform: rotateY(360deg);
+        }
+    }
+    }
+    @-moz-keyframes rotationZ {
+        from {
+          -moz-transform: rotateZ(0);
+        }
+        to {
+          -moz-transform: rotateZ(360deg);
+        }
+    }
+    @-o-keyframes rotationX {
+        from {
+          -o-transform: rotateX(0);
+        }
+        to {
+          -o-transform: rotateX(360deg);
+        }
+    }
+    @-o-keyframes rotationY {
+        from {
+          -o-transform: rotateY(0);
+        }
+        to {
+          -o-transform: rotateY(360deg);
+        }
+    }
+    @-o-keyframes rotationZ {
+        from {
+          -o-transform: rotateZ(0);
+        }
+        to {
+          -o-transform: rotateZ(360deg);
+        }
+    }
+    @keyframes rotationX {
+        from {
+          transform: rotateX(0);
+        }
+        to {
+          transform: rotateX(360deg);
+        }
+    }
+    @keyframes rotationY {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+    }
+    @keyframes rotationZ {
+        from {
+          transform: rotateZ(0);
+        }
+        to {
+          transform: rotateZ(360deg);
+        }
+    }
+    body {
+        background: black;
+    }
+    #space3d {
+        -webkit-perspective: 800;
+        -moz-perspective: 800;
+        -o-perspective: 800;
+        perspective: 800;
+        -webkit-perspective-origin: 50% 10%;
+        -moz-perspective-origin: 50% 10%;
+        -o-perspective-origin: 50% 10%;
+        perspective-origin: 50% 10%;
+    }
+    #pagegroup {
+        position: relative;
+        top: 160px;
+        margin: 0 auto;
+        height: 200px;
+        width: 200px;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-animation-name: rotationY;
+        -webkit-animation-duration: 8s;
+        -webkit-animation-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -moz-animation-name: rotationY;
+        -moz-animation-duration: 8s;
+        -moz-animation-function: linear;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-direction: alternate;
+        -o-animation-name: rotationY;
+        -o-animation-duration: 8s;
+        -o-animation-function: linear;
+        -o-animation-iteration-count: infinite;
+        -o-animation-direction: alternate;
+        animation-name: rotationY;
+        animation-duration: 8s;
+        animation-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    #pagegroup .page {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(255, 255, 255,0.8);
+        border: 1px solid white;
+        border-radius: 12px;
+        height: 200px;
+        width: 200px;
+        color: black;
+        font-size: 124pt;
+        text-align: center;
+    }
+    #pagegroup .page1 span{
+        position:absolute;
+        left:80px;
+        top:80px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+         
+    }
+    #pagegroup .page2 span{
+        position:absolute;
+        left:100px;
+        top:100px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+    }
+     #pagegroup .page2 .one{
+        position:absolute;
+        left:40px;
+        top:40px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+    }
+    #pagegroup .page3 span{
+        position:absolute;
+        left:130px;
+        top:130px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+    }
+     #pagegroup .page3 .one{
+        position:absolute;
+        left:80px;
+        top:80px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+    }
+     #pagegroup .page3 .two{
+        position:absolute;
+        left:30px;
+        top:30px;
+        width:50px;
+        height:50px;
+        border-radius:50px;
+        background:black;
+    }
+    #pagegroup .page4 ul{
+        margin:0;
+        padding: 0;
+        position:absolute;
+        left:60px;
+        top:-20px;
+        color:black;
+        font-size:150px;
+        list-style-type:disc;
+ 
+    }
+     #pagegroup .page4 ul li{
+        float: left;
+        margin-left:70px;
+     }
+      #pagegroup .page4 ol{
+        margin:0;
+        padding: 0;
+        position:absolute;
+        left:60px;
+        top:60px;
+        color:red;
+        font-size:150px;
+        list-style-type:disc;
+ 
+    }
+     #pagegroup .page4 ol li{
+        float: left;
+        margin-left:70px;
+     }
+     #pagegroup .page5 ul{
+        margin:0;
+        padding: 0;
+        position:absolute;
+        left:60px;
+        top:-30px;
+        color:black;
+        font-size:150px;
+        list-style-type:disc;
+ 
+    }
+     #pagegroup .page5 ul li{
+        float: left;
+        margin-left:70px;
+     }
+      #pagegroup .page5 ol{
+        margin:0;
+        padding: 0;
+        position:absolute;
+        left:60px;
+        top:50px;
+        color:black;
+        font-size:150px;
+        list-style-type:disc;
+ 
+    }
+     #pagegroup .page5 ol li{
+        float: left;
+        margin-left:70px;
+     }
+    #pagegroup .page5 span{
+        position:absolute;
+        left:70px;
+        top:85px;
+        width:40px;
+        height: 40px;
+        border-radius: 40px;
+        background:red;
+}
+#pagegroup .page6 ul,ol{
+    float:left;
+}
+ #pagegroup .page6 ul li{
+        position:relative;
+        left:90px;
+        top:-140px;
+        line-height:50px;
+        color:black;
+        font-size:120px;
+        list-style-type:disc;
+    }
+      #pagegroup .page6 ol li{
+        position:relative;
+        left:120px;
+        top:-140px;
+        line-height:50px;
+        color:red;
+        font-size:120px;
+        list-style-type:disc;
+ 
+    }
+    #pagegroup .page1 {
+        -webkit-transform: translateZ(100px);
+        -moz-transform: translateZ(100px);
+        -o-transform: translateZ(100px);
+        transform: translateZ(100px);
+    }
+    #pagegroup .page2 {
+        -webkit-transform: rotateY(90deg) translateZ(100px);
+        -moz-transform: rotateY(90deg) translateZ(100px);
+        -o-transform: rotateY(90deg) translateZ(100px);
+        transform: rotateY(90deg) translateZ(100px);
+    }
+    #pagegroup .page3 {
+        -webkit-transform: rotateY(-90deg) translateZ(100px);
+        -moz-transform: rotateY(-90deg) translateZ(100px);
+        -o-transform: rotateY(-90deg) translateZ(100px);
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+    #pagegroup .page4 {
+        -webkit-transform: rotateY(180deg) translateZ(100px);
+        -moz-transform: rotateY(180deg) translateZ(100px);
+        -o-transform: rotateY(180deg) translateZ(100px);
+        transform: rotateY(180deg) translateZ(100px);
+    }
+    #pagegroup .page5 {
+        -webkit-transform: rotateX(90deg) translateZ(100px);
+        -moz-transform: rotateX(90deg) translateZ(100px);
+        -o-transform: rotateX(90deg) translateZ(100px);
+        transform: rotateX(90deg) translateZ(100px);
+    }
+    #pagegroup .page6 {
+        -webkit-transform: rotateX(-90deg) translateZ(100px);
+        -moz-transform: rotateX(-90deg) translateZ(100px);
+        -o-transform: rotateX(-90deg) translateZ(100px);
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+    </style>
+ </head>
+ <body>    
+    <!--css3做的旋转的骰子  -->
+	<!--transform转换  rotate旋转  animation动画>
+  <!-- div#space3d>div#pagegroup>div.page.page${$}*6 -->
+  <div id="space3d">
+   <div id="pagegroup">
+    <div class="page page1">
+     <span></span>
+    </div>
+    <div class="page page2">
+     <span></span>
+     <span class="one"></span>
+    </div>
+    <div class="page page3">
+     <span></span>
+     <span class="one"></span>
+     <span class="two"></span>
+    </div>
+    <div class="page page4">
+     <ul>
+      <li></li>
+      <li></li>
+     </ul>
+     <ol>
+      <li></li>
+      <li></li>
+     </ol>
+    </div>
+    <div class="page page5">
+     <ul>
+      <li></li>
+      <li></li>
+     </ul>
+     <span></span>
+     <ol>
+      <li></li>
+      <li></li>
+     </ol>
+    </div>
+    <div class="page page6">
+     <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+     </ul>
+     <ol>
+      <li></li>
+      <li></li>
+      <li></li>
+     </ol>
+    </div>
+   </div>
+  </div>
+  <button id="changeX">沿X轴旋转</button>
+  <button id="changeY">沿Y轴旋转</button>
+  <button id="changeZ">沿Z轴旋转</button>
+  <script type="text/javascript">
+;(function() {
+    var
+        win = this,
+        doc = win.document,
+        cube = doc.getElementById('pagegroup'),
+        changeX = doc.getElementById('changeX'),
+        changeY = doc.getElementById('changeY');
+        changeZ = doc.getElementById('changeZ');
+    win.addEventListener('load', ready, false);
+    function ready() {
+        changeX.addEventListener('click', rotationX, false);
+        changeY.addEventListener('click', rotationY, false);
+        changeZ.addEventListener('click', rotationZ, false);
+    }
+    function rotationX() {
+        cube.style.webkitAnimationName = 'rotationX';
+        cube.style.mozAnimationName = 'rotationX';
+        cube.style.oAnimationName = 'rotationX';
+        cube.style.animationName = 'rotationX';
+    }
+    function rotationY() {
+        cube.style.webkitAnimationName = 'rotationY';
+        cube.style.mozAnimationName = 'rotationY';
+        cube.style.oAnimationName = 'rotationY';
+        cube.style.animationName = 'rotationY';
+    }
+    function rotationZ() {
+        cube.style.webkitAnimationName = 'rotationZ';
+        cube.style.mozAnimationName = 'rotationZ';
+        cube.style.oAnimationName = 'rotationZ';
+        cube.style.animationName = 'rotationZ';
+    }
+}).call(this);
+</script> 
+ </body>
+</html>

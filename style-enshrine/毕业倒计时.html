@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>阿森专属设计</title>
+  <style type="text/css">
+		p{
+			width:500px;
+			height:40px;
+			background-color:yellow;
+			margin:100px auto 0;
+			font-size:30px;
+			text-align:center;
+		}
+		span{
+			display:inline-block;
+			margin:0px 4px  0px 4px;
+			color:red;
+		}
+  </style>
+ </head>
+ <body>
+		
+		<p>距离达内毕业<span>0</span>天<span>0</span>时<span>0</span>分<span>0</span>秒</p>
+
+		<script type="text/javascript">
+			(function(){
+				var span = document.querySelectorAll("p span")
+				var date = new Date(2019,7,15)
+				//封装时间
+				function time(){
+					var dates = new Date();
+					var ms = date-dates;
+					var day = Math.floor(ms/1000/60/60/24)
+					var hous = Math.floor(ms/1000/60/60%24)
+					var m = Math.floor(ms/1000/60%60)
+					var s = Math.floor(ms/1000%60)
+					var arr = [day,hous,m,s]
+					span.forEach(function(item,i){
+						item.innerText = arr[i]
+						})
+				}
+				time()
+				setInterval(time,1000)
+			})()
+		</script>
+ </body>
+</html>

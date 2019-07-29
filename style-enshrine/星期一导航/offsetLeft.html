@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>offsetLeft</title>
+<style>
+  /* css */
+  ul{
+    width: 600px;
+    list-style: none;
+    display: flex;
+    border-bottom: 1.5px solid #000;
+    position: relative;
+  }
+  ul li{
+    width: 80px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 40px; 
+  }
+  ul li:hover{
+    cursor: pointer;
+  }
+  #li1{
+    height: 42px;
+    border: 1.5px solid #000;
+    border-bottom: 1.5px solid #fff;
+    position: absolute;
+    left: 40px;
+    transition: 1s;
+  }
+</style>
+</head>
+<body>
+  <ul id="u1">
+    <li>星期日</li>
+    <li>星期一</li>
+    <li>星期二</li>
+    <li>星期三</li>
+    <li>星期四</li>
+    <li>星期五</li>
+    <li>星期六</li>
+    <li id="li1"></li>
+  </ul>
+<script>
+  // js
+  (function(){
+    var lis=document.querySelectorAll("#u1>li:not(:last-child)"); //触发元素
+    var li1=document.getElementById("li1"); //目标元素
+    for(var li of lis){
+      li.onclick=function(){
+        var li_left=this.offsetLeft; //获取该元素左侧距离已定位父元素的左侧的长度
+        //console.log(li_left);
+        li1.style.left=`${li_left}px`; //根据结果偏移
+      }
+    }
+  })();
+</script>
+</body>
+</html>
