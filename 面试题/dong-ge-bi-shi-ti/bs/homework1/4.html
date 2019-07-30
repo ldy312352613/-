@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//in: 专门判断一个对象中，是否包含指定名称的属性
+//"sname" in lilei
+//判断lilei中是否包含名为sname的属性
+//如果包含，返回true
+//如果不包含，返回false
+
+//一切全局变量，其实都是window对象的成员
+/*var a=10;
+console.log(window);
+console.log(a);
+console.log(window.a);
+console.log(window["a"]);*/
+
+/*var a1=10;//无法被delete删除
+window.a2=20;//可被delete删除
+window["a3"]=30;//可被delete删除
+console.log(window);
+delete window.a1;
+delete window.a2;
+delete window.a3;
+console.log(window);*/
+
+//如果window对象中有名为a的成员
+  //var a;提前
+  if('a' in window){//js中没有块级作用域
+    var a=10
+  }
+  alert(a);//10
+</script>
+</body>
+</html>

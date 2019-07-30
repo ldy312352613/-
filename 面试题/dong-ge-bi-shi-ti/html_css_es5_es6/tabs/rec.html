@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>收到消息:<span id="recMsg"></span></h1>
+  <script>  
+    window.addEventListener(
+      "storage",
+      function(){
+        recMsg.innerHTML=localStorage.getItem("msg");
+      }
+    )
+    /*//获取Cookie天的内容
+    function getKey(key) {
+        return JSON.parse(`{"${document.cookie.replace(/;\s+/gi,'","').replace(/=/gi, '":"')}"}`)[key];
+    }
+    //每隔1秒获取Cookie的内容
+    setInterval(function(){
+      recMsg.innerHTML=getKey("msg");
+    },500);*/
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window中的方法和属性</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #buttondemo {
+            position: fixed;
+            background: yellow;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+        }
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="buttondemo">
+    <button id="newwindow"><span>新建</span>一个窗口</button>
+    <button id="closewindow"><span>关闭</span>新建的窗口</button>
+    <button id="zuobiao"><span>moveTo</span> 移动窗口坐标到那个位置</button>
+    <button id="yidong"><span>moveBy</span> 坐标移动多少像素</button>
+    <button id="daxiao"><span>resizeTo</span>像素固定到多少像素</button>
+    <button id="zhiding"><span>resizeBy</span>按照指定像素进行叠加</button>
+    <button id="gundong"><span>scrollBy</span>滚动条到指定像素</button>
+    <button id="gundao"><span>scrollBy</span>滚动条按照指定像素叠加</button>
+</div>
+
+<script type="text/javascript">
+    //新建一个窗口
+    document.getElementById("newwindow").onclick = function () {
+        //使用open方法新建一个窗口
+         ck = window.open("", "", "top=0px,left=0px,width=400px,height=400px");
+        //向新打开的窗口中写入ul和li列表标签
+        ck.document.write("<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li> <li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li><li>34</li><li>35</li><li>36</li><li>37</li><li>38</li><li>39</li><li>40</li><li>41</li><li>42</li><li>43</li><li>44</li><li>45</li><li>46</li><li>47</li><li>48</li><li>49</li><li>50</li><li>51</li><li>52</li><li>53</li><li>54</li><li>55</li><li>56</li><li>57</li><li>58</li><li>59</li><li>60</li></ul>");
+    }
+    //关闭新建的窗口
+    document.getElementById("closewindow").onclick = function () {
+        //使用close()方法关闭新建的窗口
+        ck.close();
+    }
+    //把窗口坐标移动到桌面上的指定像素,左边值为left ,右边值为top,坐标是固定的
+    document.getElementById("zuobiao").onclick = function () {
+        ck.moveTo(300, 300);
+    }
+
+    //给窗口坐标移动多少个像素,按照指定的值,点一次叠加
+    document.getElementById("yidong").onclick = function () {
+        ck.moveBy(30, 30);
+    }
+    //对窗口的长宽像素调整到指定像素
+    document.getElementById("daxiao").onclick = function () {
+        ck.resizeTo(600, 600);
+    }
+    //给窗口坐标调整多少个像素,按照指定的值,
+    document.getElementById("zhiding").onclick = function () {
+        ck.resizeBy(-30, -30);
+    }
+    //对窗口滚动条移动到指定的像素
+    document.getElementById("gundong").onclick = function () {
+        ck.scrollTo(300, 300);
+    }
+    //给窗口滚动条调整多少个像素,按照指定的值,
+    document.getElementById("gundao").onclick = function () {
+        ck.scrollBy(30, 30);
+    }
+</script>
+</body>
+</html>

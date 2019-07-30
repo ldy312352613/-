@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function MyPromise(fun) {
+    console.log("我自己的Promise");
+    var self = this;
+    self.status = 'pending'; //promise当前的状态
+    self.data;//保存要传给下一项任务的参数
+    self.nextTask;//下一项任务
+    function open(value) {
+      setTimeout(function(){
+        if(self.status === 'pending') {
+          self.status = 'open';
+          self.data=value;
+          if(typeof nextTask=="function"){
+            self.nextTask(self.data);
+          }
+        }
+      })
+    }
+    fun(open);
+  };
+  MyPromise.prototype.then = function (nextTask) {
+    var self=this;
+    if(self.status=="pending"){
+      return new MyPromise(function(open){
+        self.nextTask=function(data){
+          var x=nextTask(self.data);
+          if(x instanceof MyPromise){
+            x.then(open)
+          }else{
+            open(self.data);
+          }
+        };
+      })
+    }else{
+      return new MyPromise(function(open){
+        var x=nextTask(self.data);
+        if(x instanceof MyPromise){
+          x.then(open)
+        }else{
+          open(self.data);
+        }
+      });
+    }
+  };
+
+  function liang(){
+    return new MyPromise(function(open){
+      var bang="亮的接力棒";
+      console.log("亮拿着 "+bang+" 起跑...");
+      setTimeout(function(){
+        console.log("亮到达终点!并将 "+bang+" 传给下一个人!");
+        open(bang);
+      },6000)
+    })
+  }
+  function ran(bang){
+    return new MyPromise(function(open){
+      console.log("然拿着 "+bang+" 起跑...");
+      setTimeout(function(){
+        console.log("然到达终点!并将 "+bang+"传给下一个人!");
+        open(bang)
+      },4000)
+    })
+  }
+  function dong(bang){
+    return new MyPromise(function(open){
+      console.log("东拿着 "+bang+" 起跑...");
+      setTimeout(function(){
+        console.log("东拿着 "+bang+" 到达终点!");
+        open();
+      },2000)
+    })
+  }
+  liang()
+  .then(ran)
+  .then(dong)
+  /*.then(function(){
+    console.log("比赛结束!");
+  });*/
+</script>
+</body>
+</html>
