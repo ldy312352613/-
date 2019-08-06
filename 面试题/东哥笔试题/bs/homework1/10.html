@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//http://localhost:3000/products?key0=0&key1=1&key2=2
+//search=location.search
+var search="?key0=0&key1=true&key2=hello";
+//去问号
+search=search.slice(1);
+//先按&切
+var strs=search.split("&");
+console.log(strs);
+var params={};
+//遍历strs中每个子字符串
+for(var str of strs){
+  //将每个子字符串再按=切割，第[0]部分当做属性名，第[1]部分当做属性值
+  //str:"key0=0"
+  var arr=str.split("=");
+  //arr:["key0","0"]
+  //       [0]  [1]
+  params[arr[0]]=isNaN(arr[1])?arr[1]:Number(arr[1]);
+}
+console.log(params);
+/*var params={
+  key0:0,
+  key1:,
+  key2:
+}*/
+//nodejs: req.query.lid
+//?lid=5 =>express => req.query={ lid:5 }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  
+<script>
+    // 编写一个方法,计算一个数组中连续值共有多少对
+    //   例如:[1,2,3,3,4,5,5,5,7,7,8,8]
+    var arr=[1,2,3,3,4,5,5,5,7,7,8,8]
+    for(var i=0,num=0;i<arr.length;i++){
+        if(arr[i]==arr[i+1]&&arr[i]!=arr[i-1]){
+            num+=1
+        }
+    }
+    console.log(num);    //4对
+
+    // 编写一个方法去掉数组里面重复的内容
+    
+    //烧一根不均匀的绳需要用一个小时.如何用它来判断半个小时
+
+
+    //你让工人为你工作七天,给佣人的回报是一根金条, 
+    //金条平均分成相同的七段
+    //你必须在每天结束的时候给他们一段金条.
+    //如果只需你两次把金条弄断,你如何给工人付费
+</script>
+</body>
+</html>

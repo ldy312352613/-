@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+		*{
+			margin:0;
+			padding:0;
+		}
+        .d1{
+            width:250px;
+            height: 250px;
+            background: yellow;
+            margin: auto;
+            text-align: center;  
+        }
+        .d1>div:nth-child(3){
+            background: red;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            margin: auto;
+        }
+        .d1>div:nth-child(3)>a{
+            display: inline-block;
+            width:20px;
+            height: 20px;
+            line-height: 50px;
+        }
+        .d1:hover div:nth-child(3){
+           animation: aa 2s  ;
+        }
+
+		.d1:hover+div{
+		   border-radius: 50%;
+        }
+        @keyframes aa{
+            0%{
+                width:50px;
+
+            }
+            50%{
+                width:100px;
+                height:100px;
+                border-radius: 25%;
+            }
+            100%{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: blueviolet;
+            }
+        }
+
+		#s1{
+            width:400px;
+            height:100px;
+            background:yellow;
+			margin:auto;
+        }
+        .antzone {
+            border-bottom: 5px solid #ccc;
+            height: 5px;
+            width: 400px;
+            position: relative;
+            display: block;
+			line-height:5px
+        }
+        .antzone:before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 5px;
+            top: 5px;
+            left: 49%;
+            background-color: #f00;
+            transition: all 0.35s ease-in-out;
+            transform: scale(0);
+        }
+        #s1:hover .antzone:before {
+            transform: scaleX(40);
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <div>看样式</div>
+        <p>呼唤鼠标</p>
+        <div><a href="左侧出现.html">找哈喽</a></div>
+    </div>
+   <div id="s1">
+		<div class="antzone"></div>
+        <div >浮动后两边延伸</div>
+		 
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>右侧</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		a{
+		text-decoration: none;
+		}
+		#nav {
+			padding: 20px;
+			text-align: center;
+			position: fixed;
+			height: 100%;
+			top: 0;
+			width: 80%;
+			max-width: 400px;
+			background: rgb(255, 219, 58);
+			box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+		}
+		#nav:not(:target) {
+			right: -100%;
+			transition: right 1.5s;
+		}
+		#nav:target {
+			right: 0;
+			transition: right 1s;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div>
+			<h1>哈喽</h1>
+			<a href="#nav" >打开</a>
+		</div>
+	</header>
+	<div>
+		<p>左侧出现</p>
+		<p>利用a标签的target属性</p>
+		<p></p>
+		<p></p>
+	</div>
+	<nav id="nav">
+		<a href="#" >关闭</a>	
+		<ul>
+			<li><a href="#">惊喜吗</a></li>
+			<li><a href="#">意外吗</a></li>
+			<li><a href="巨幕.html">找巨幕</a></li>
+			<li><a href="#">这是多么无聊</a></li>
+		</ul>
+	</nav>
+
+</body>
+</html>

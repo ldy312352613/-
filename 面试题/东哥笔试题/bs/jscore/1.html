@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var a=10;
+  var obj={
+    a:20,
+    intr:function(){
+      var a=30;
+      console.log(this.a);
+    }
+  }
+  obj.intr();//20
+  var intr=obj.intr;
+  intr();//10
+//this:
+//obj.fun()  fun中的this->.前的obj
+
+//fun()或(function(){})()
+//   this->window
+
+//new 构造函数() 构造函数中的this->将来new出的新对象
+
+//setInterval(obj.fun,1000)
+//或setTimeout(obj.fun,1000)
+//   fun中的this->window
+//因为回调执行时:  fun()
+
+//btn.addEventListener("click",obj.fun);
+//  this->btn
+//事件处理函数执行时: btn.onclick()
+//                        =fun
+
+//var lilei={
+  //intr:function(){
+    //console.log(this)
+  //}
+  //intr:()=>{ console.log(this) }
+  //intr(){ console.log(this); }
+//}
+//lilei.intr();//1. this->lilei
+               //2. this->window
+               //3. this->lilei
+</script>
+</body>
+</html>

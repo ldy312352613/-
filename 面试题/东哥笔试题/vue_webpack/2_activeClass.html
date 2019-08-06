@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <parent></parent>
+  </div>
+  <template id="tplParent">
+    <div>
+      <h1>要删除第<span>{{i}}</span></h1>
+      <child @del="del"></child>
+    </div>
+  </template>
+  <template id="tplChild">
+    <button @click="del">删除</button>
+  </template>
+  <script>
+    var child={
+      template:"#tplChild",
+      data(){
+        return {}
+      },
+      methods:{
+        del(){
+          this.$emit("del",10)
+        }
+      }
+    }
+    Vue.component("parent",{
+      template:"#tplParent",
+      data(){
+        return {
+          i:-1
+        }
+      },
+      methods:{
+        del(i){
+          this.i=i;
+        }
+      },
+      components:{ child }
+    })
+    var vm=new Vue({
+      el:"#app",
+      data:{}
+    })
+  </script>
+</body>
+</html>

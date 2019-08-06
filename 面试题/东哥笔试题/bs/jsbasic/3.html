@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//统计一个字符串中字符出现的次数
+//获得次数最多的一个，共出现几次
+var str="helloworld";
+       //0123456780
+//用字典的方式:先定义空对象
+var dict={};
+//变量字符串中每个字
+for(var i=0;i<str.length;i++){
+  //如果dict对象中不包含以当前字母为属性名的成员
+  if(dict[str[i]]===undefined){
+    //就强行添加一个以当前字母为属性名的成员，初始化值为1
+    dict[str[i]]=1;
+  }else{//否则，如果已经有以当前字母为属性名的成员
+    //就为当前字的数值+1
+    dict[str[i]]+=1
+  }
+}
+console.log(dict);
+//利用奥运会跳水比赛记分牌的方式
+var max,count=0;
+//遍历字典中每个属性
+for(var key in dict){
+  //用当前属性值和count比较
+  //如果当前属性值>count时，才取而代之，并将当前字，保存在max中
+  if(dict[key]>count){
+    max=key;
+    count=dict[key];
+  }  
+}
+console.log(max,count);
+/*
+  dict:{
+    h:1,
+    e:1,
+    l:2,
+    ...
+  }
+*/ 
+</script>
+</body>
+</html>

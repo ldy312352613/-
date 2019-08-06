@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <div></div>
+</head>
+<body>
+  <h1 >收到消息:<span id="recMsg"></span></h1>
+  <input id="msg" type="text"><button id="send">发送</button>
+  <script>
+    var socket = new WebSocket('ws://localhost:8080'); 
+    send.onclick=function(){
+      socket.send(msg.value.trim());
+    }
+  </script>
+</body>
+</html>
