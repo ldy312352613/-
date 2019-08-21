@@ -1,0 +1,22 @@
+父元素设置为：position: relative; 
+子元素设置为：position: absolute; 
+	     left:50%;top:50%，
+	     teansform：translate(50%,50%)
+
+
+
+
+display: flex;//flex布局
+justify-content: center;//使子项目水平居中
+align-items: center;//使子项目垂直居中
+
+
+display:flex//父元素
+margin:auto//子元素
+
+
+
+
+display: table-cell;//父元素
+vertical-align: middle;//父元素
+margin:auto;//子元素 
